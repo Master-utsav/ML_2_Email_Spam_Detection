@@ -1,0 +1,339 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import"shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ─── Tailwind theme tokens ──────────────────────────────────────────────── */
+/* Maps shadcn CSS vars → Tailwind color utilities AND adds SpamSentry brand  */
+@theme inline {
+  /* shadcn/ui semantic tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Chart tokens */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Sidebar tokens */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Radius scale */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* ─── SpamSentry fonts ───────────────────────────────────────────────── */
+  --font-display: var(--font-display), "Syne", sans-serif;
+  --font-sans: var(--font-sans), "Inter", sans-serif;
+  --font-mono: var(--font-mono), "JetBrains Mono", monospace;
+
+  /* ─── SpamSentry brand palette ──────────────────────────────────────── */
+  --color-brand-cyan: oklch(0.78 0.18 197);
+  --color-brand-violet: oklch(0.68 0.22 275);
+  --color-brand-fuchsia: oklch(0.72 0.24 315);
+
+  /* ─── SpamSentry surface tokens ─────────────────────────────────────── */
+  --color-surface-base: #090912;
+  --color-surface-card: #0d0d1a;
+  --color-surface-elevated: #12121f;
+}
+
+/* ─── shadcn light theme (`:root`) ──────────────────────────────────────── */
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+/* ─── shadcn dark theme — overridden with SpamSentry deep-space palette ─── */
+/* The SpamSentry app always renders dark; these values drive shadcn          */
+/* components (Dialog, Button, etc.) to match the dark cyberpunk look.        */
+.dark {
+  --background: oklch(0.09 0.02 265);
+  /* #090912 */
+  --foreground: oklch(0.94 0.01 240);
+  /* slate-100 */
+  --card: oklch(0.11 0.02 265);
+  /* #0d0d1a */
+  --card-foreground: oklch(0.94 0.01 240);
+  --popover: oklch(0.11 0.02 265);
+  --popover-foreground: oklch(0.94 0.01 240);
+  --primary: oklch(0.78 0.18 197);
+  /* brand-cyan */
+  --primary-foreground: oklch(0.09 0.02 265);
+  --secondary: oklch(0.16 0.03 265);
+  /* slightly lighter surface */
+  --secondary-foreground: oklch(0.85 0.01 240);
+  --muted: oklch(0.16 0.03 265);
+  --muted-foreground: oklch(0.56 0.02 240);
+  /* slate-500 */
+  --accent: oklch(0.68 0.22 275);
+  /* brand-violet */
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.65 0.22 25);
+  /* red-400 */
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.78 0.18 197 / 50%);
+  /* cyan ring */
+  --chart-1: oklch(0.78 0.18 197);
+  --chart-2: oklch(0.68 0.22 275);
+  --chart-3: oklch(0.72 0.24 315);
+  --chart-4: oklch(0.70 0.19 150);
+  /* emerald */
+  --chart-5: oklch(0.65 0.22 25);
+  /* red */
+  --sidebar: oklch(0.11 0.02 265);
+  --sidebar-foreground: oklch(0.94 0.01 240);
+  --sidebar-primary: oklch(0.78 0.18 197);
+  --sidebar-primary-foreground: oklch(0.09 0.02 265);
+  --sidebar-accent: oklch(0.16 0.03 265);
+  --sidebar-accent-foreground: oklch(0.85 0.01 240);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-ring: oklch(0.78 0.18 197 / 50%);
+}
+
+/* ─── Base layer resets (shadcn pattern) ─────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    @apply font-sans;
+  }
+}
+
+/* ─── Scrollbar styling ──────────────────────────────────────────────────── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 116, 139, 0.3) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.3);
+  border-radius: 999px;
+}
+
+/* ─── Selection ──────────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(34, 211, 238, 0.2);
+  color: #cffafe;
+}
+
+/* ─── Display font utility ───────────────────────────────────────────────── */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* ─── Focus ring — cyan brand colour overrides shadcn default ────────────── */
+:focus-visible {
+  outline: 2px solid rgba(34, 211, 238, 0.5);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════════════════════════════ */
+.footer-root {
+  width: 100%;
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: 42rem;
+  /* matches max-w-2xl card */
+  margin: 0 auto;
+  padding: 0 1rem 2.5rem;
+}
+
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-foreground), transparent);
+  margin-bottom: 1.5rem;
+}
+
+/* ── Main row ─────────────────────────────────────────────────── */
+.footer-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* Brand cluster */
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-logo {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.35);
+}
+
+.footer-brand-name {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--text-foreground);
+  letter-spacing: -0.01em;
+}
+
+.footer-version {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  color: var(--muted-foreground);
+  letter-spacing: 0.05em;
+}
+
+.footer-dot {
+  color: var(--color-border);
+  font-size: 12px;
+  user-select: none;
+}
+
+/* Links cluster */
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  transition: color 0.18s, border-color 0.18s, background 0.18s;
+}
+
+.footer-link:hover {
+  color: var(--sky);
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(56, 189, 248, 0.1); 
+}
+
+.footer-link-github {
+  gap: 6px;
+}
+
+/* ── Copyright row ────────────────────────────────────────────── */
+.footer-copyright {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+
+.footer-copy-text {
+  color: var(--muted-foreground);
+}
+
+.footer-author-link {
+  color: var(--foreground);
+  font-weight: 700;
+  text-decoration: none;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.01em;
+  transition: color 0.15s;
+}
+
+.footer-author-link:hover {
+  color: var(--text-foreground);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
