@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   title: "SpamSentry - AI-Powered Message Intelligence",
   description:
     "Real-time spam detection powered by machine learning. Paste a message and get an instant verdict.",
-  authors: [{ name: "Utsav Jaiswal", url: "https://www.masterutsav.in" }, { name: "GitHub Repo", url: "https://github.com/Master-utsav/ML_2_Email_Spam_detection" } , { name: "LinkedIn", url: "https://www.linkedin.com/in/master-utsav" }, { name: "Twitter", url: "https://x.com/masterutsav01" },  {name: "Master Utsav", url: "https://www.masterutsav.in" }, ],
+  authors: [{ name: "Utsav Jaiswal", url: "https://www.masterutsav.in" }, { name: "GitHub Repo", url: "https://github.com/Master-utsav/ML_2_Email_Spam_Detection" } , { name: "LinkedIn", url: "https://www.linkedin.com/in/master-utsav" }, { name: "Twitter", url: "https://x.com/masterutsav01" },  {name: "Master Utsav", url: "https://www.masterutsav.in" }, ],
 
   openGraph: {
     title: "SpamSentry - AI-Powered Message Intelligence",
