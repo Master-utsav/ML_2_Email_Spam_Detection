@@ -1,3 +1,4 @@
+import { Shield } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {
@@ -14,11 +15,12 @@ export function Footer() {
           {/* Left — branding */}
           <div className="footer-brand">
             <div className="footer-logo">
-              <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
-                <circle cx="9" cy="9" r="3.5" fill="white" opacity="0.9" />
-                <circle cx="9" cy="9" r="7" stroke="white" strokeWidth="1.5" opacity="0.5" />
-                <path d="M9 2v2M9 14v2M2 9h2M14 9h2" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
-              </svg>
+              <div className="relative">
+              <div className="w-5 h-5 rounded-xl bg-linear-to-br from-cyan-400 to-violet-500 flex items-center justify-center shadow-lg shadow-cyan-500/20">
+                <Shield className="w-3 h-3 text-white" strokeWidth={2.5} />
+              </div>
+              <div className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-emerald-400 border-2 animate-pulse" />
+            </div>
             </div>
             <span className="footer-brand-name">
               Spam<span className="brand-accent">Sentry</span>
