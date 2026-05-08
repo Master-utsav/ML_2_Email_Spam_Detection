@@ -2,7 +2,7 @@
 
 echo "Starting deployment..."
 
-cd ./web || exit
+cd ~/ML_2_Email_Spam_Detection/web || exit
 
 echo "Pulling latest changes from GitHub..."
 git pull origin main
