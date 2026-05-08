@@ -5,6 +5,7 @@ echo "Starting deployment..."
 cd /home/ubuntu/ML_2_Email_Spam_Detection/web || exit
 
 echo "Pulling latest changes from GitHub..."
+git reset --hard HEAD
 git pull origin main
 
 echo "Installing dependencies..."
