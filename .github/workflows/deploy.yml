@@ -23,8 +23,7 @@ jobs:
           key: ${{ secrets.SECRET_PRIVATE_KEY}}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           port: 22
-
           script: |
-            cd ~/ML_2_Email_Spam_Detection
+            cd /home/ubuntu/ML_2_Email_Spam_Detection
             chmod +x deploy.sh
             ./deploy.sh
