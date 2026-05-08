@@ -22,7 +22,7 @@ echo "Building application..."
 npm run build
 
 echo "Restarting PM2 app..."
-$PM2_PATH restart web --update-env || $PM2_PATH start npm --name "web" -- start
+$PM2_PATH restart ecosystem.config.js --update-env || $PM2_PATH start ecosystem.config.js
 
 echo "Saving PM2 process list..."
 $PM2_PATH save
