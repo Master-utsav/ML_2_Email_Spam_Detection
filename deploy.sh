@@ -4,10 +4,13 @@ echo "Starting deployment..."
 
 cd /home/ubuntu/ML_2_Email_Spam_Detection/web || exit
 
-echo "Pulling latest changes from GitHub..."
-git pull origin main
+echo "Fetching latest changes from GitHub..."
+git fetch origin main
 
-echo "Installing dependencies.."
+echo "Resetting to latest GitHub version..."
+git reset --hard origin/main
+
+echo "Installing dependencies..."
 npm install
 
 echo "Building application..."
