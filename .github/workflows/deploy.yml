@@ -10,7 +10,7 @@ jobs:
       - name: Execute remote SSH commands using SECRET_PRIVATE_KEY
         uses: appleboy/ssh-action@v1
         with:
-          host: ${{ secrets.HOST }}
+          host: 13.233.236.168
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.SECRET_PRIVATE_KEY}}
           port: 22
