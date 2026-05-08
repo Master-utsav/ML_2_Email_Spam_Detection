@@ -22,4 +22,4 @@ pm2 restart mlp0-web || pm2 start npm --name "mlp0-web" -- start
 echo "Saving PM2 process list..."
 pm2 save
 
-echo "Deployment completed successfully"
+echo "Deployment completed successfully!"
