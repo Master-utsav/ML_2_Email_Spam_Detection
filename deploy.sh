@@ -8,7 +8,7 @@ echo "Pulling latest changes from GitHub..."
 git pull origin main
 
 echo "Installing dependencies..."
-npm ci
+npm install
 
 echo "Building application..."
 npm run build
