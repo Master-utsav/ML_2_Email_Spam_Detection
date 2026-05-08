@@ -1,6 +1,6 @@
 // ─── App Meta ────────────────────────────────────────────────────────────────
 
-export const APP_NAME = "SpamSentry";
+export const APP_NAME = "UtsavAI";
 export const APP_TAGLINE = "AI-Powered Message Intelligence";
 export const APP_VERSION = "v1.0";
 

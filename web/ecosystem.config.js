@@ -1,6 +1,6 @@
 export const apps = [
     {
-        name: "mlp0-web",
+        name: "web",
         script: "npm",
         args: "start",
         env: {
