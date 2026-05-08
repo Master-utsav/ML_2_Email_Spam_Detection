@@ -17,7 +17,7 @@ echo "Building application..."
 npm run build
 
 echo "Restarting PM2 app..."
-pm2 restart mlp0-web --update-env || pm2 start npm --name "mlp0-web" -- start
+pm2 restart web --update-env || pm2 start npm --name "web" -- start
 
 echo "Saving PM2 process list..."
 pm2 save
