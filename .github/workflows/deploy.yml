@@ -23,4 +23,7 @@ jobs:
           key: ${{ secrets.SECRET_PRIVATE_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           port: 22
-          script: ./deploy.sh
+          script: |
+              cd~
+              chmode +x ./deploy.sh
+              ./deploy.sh
