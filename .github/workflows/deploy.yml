@@ -10,11 +10,8 @@ jobs:
       - name: Execute remote SSH commands using SECRET_PRIVATE_KEY
         uses: appleboy/ssh-action@v1
         with:
-          host: 13.233.236.168
+          host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.SECRET_PRIVATE_KEY}}
           port: 22
-          script: |
-              cd ~/Spam-Email-Detector
-              chmod +x deploy.sh
-              ./deploy.sh
+          script: ./deploy.sh
