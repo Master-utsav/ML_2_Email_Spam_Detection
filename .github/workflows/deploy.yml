@@ -25,6 +25,6 @@ jobs:
           port: 22
 
           script: |
-            cd ~
+            cd ~/Spam\ Email\ Detector
             chmod +x deploy.sh
             ./deploy.sh
