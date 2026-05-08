@@ -3,6 +3,8 @@
 export NVM_DIR="$HOME/.nvm"
 source "$NVM_DIR/nvm.sh"
 
+PM2_PATH="/home/ubuntu/.nvm/versions/node/v24.15.0/bin/pm2"
+
 echo "Starting deployment..."
 
 cd /home/ubuntu/ML_2_Email_Spam_Detection/web || exit
@@ -20,9 +22,9 @@ echo "Building application..."
 npm run build
 
 echo "Restarting PM2 app..."
-/home/ubuntu/.nvm/versions/node/v24.15.0/bin/pm2 restart mlp0-web --update-env || /home/ubuntu/.nvm/versions/node/v24.15.0/bin/pm2 start npm --name "mlp0-web" -- start
+$PM2_PATH restart mlp0-web --update-env || $PM2_PATH start npm --name "mlp0-web" -- start
 
 echo "Saving PM2 process list..."
-/home/ubuntu/.nvm/versions/node/v24.15.0/bin/pm2 save
+$PM2_PATH save
 
 echo "Deployment completed successfully!"
